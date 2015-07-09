@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dev Match</title>
+  <title>Gig Match</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -18,7 +18,7 @@
       </button>
       <%= link_to root_path, class: 'navbar-brand' do %>
       <i class="fa fa-users"></i>
-      Dev Match
+      Gig Match
       <% end %>
     </div>
     <div class="collapse navbar-collapse" id="main-nav-collapse">
@@ -31,6 +31,9 @@
 </nav>
 
 <div class="container">
+  <% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "alert alert-#{key}" %>
+  <% end %>
   <%= yield %>
 </div>
 
